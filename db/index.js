@@ -1,7 +1,8 @@
 var low = require('lowdb');
 var db = low('./admin/data/db.json');
 
-db('posts').push({ title: 'lowdb is awesome?'});
+//db('posts').push({ title: 'lowdb is awesome?'});
+
 
 // HELLO WORLD
 var http = require('http');
