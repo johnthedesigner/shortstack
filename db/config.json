@@ -1,0 +1,13 @@
+{
+	"schema":[
+		{
+			"name":"flowers",
+			"fields":[
+				"id"			:"id_incremental",
+				"name"			:"text",
+				"description"	:"text"
+			]
+		}
+	],
+	"test":"test"
+}
