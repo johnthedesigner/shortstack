@@ -1,0 +1,13 @@
+{
+    "type": "array",
+    "title": "Flowers",
+    "items": {
+        "title": "Flower",
+        "fields": [
+            {
+                "name": "name",
+                "type": "text"
+            }
+        ]
+    }
+}

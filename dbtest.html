@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	</head>
+	<body>
+		<button id="submit">Submit</button>
+		<button id="release">Release</button>
+		<button id="schema">Get Schema</button>
+		<script>
+		var jsonData = {
+		  "name": "Jeremy Dorn",
+		  "age": 25,
+		  "favorite_color": "#ffa500",
+		  "gender": "male",
+		  "location": {
+		    "city": "San Francisco",
+		    "state": "CA",
+		    "citystate": "San Francisco, CA"
+		  },
+		  "pets": [
+		    {
+		      "type": "dog",
+		      "name": "Walter"
+		    }
+		  ],
+		  "Neuroses": null
+		};
+		function submitJson(){
+			
+			jsonData.mode = "update";
+			
+			$.ajax({
+		        type: "GET",
+		        url: "http://jtd.co/shortstack/dbtest.php",
+		        data: jsonData,
+		        contentType: "text/json; charset=utf-8",
+		        dataType: "json",
+		        success: function(data){console.log(data);},
+		        failure: function(errMsg) {
+		            alert(errMsg);
+		        }
+			});
+			
+		};
+		function releaseProd(){
+			
+			var data = new Object;
+			data.mode = "release";
+			
+			$.ajax({
+		        type: "GET",
+		        url: "http://jtd.co/shortstack/db",
+		        data: data,
+		        contentType: "text/json; charset=utf-8",
+		        dataType: "json",
+		        success: function(data){console.log(data);},
+		        failure: function(errMsg) {
+		            alert(errMsg);
+		        }
+			});
+			
+		};
+		function getSchema(){
+			
+			var data = new Object;
+			data.mode = "schema";
+			
+			$.ajax({
+		        type: "GET",
+		        url: "http://jtd.co/shortstack/db",
+		        data: data,
+		        contentType: "text/json; charset=utf-8",
+		        dataType: "json",
+		        success: function(data){console.log(data)},
+		        failure: function(errMsg) {
+		            alert(errMsg);
+		        }
+			});
+			
+		};
+		$('#submit').click(function(){
+			submitJson();
+		});
+		$('#release').click(function(){
+			releaseProd();
+		});
+		$('#schema').click(function(){
+			getSchema();
+		});
+		</script>
+	</body>
+</html>

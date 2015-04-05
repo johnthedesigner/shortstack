@@ -1,11 +1,15 @@
 <h1>List</h1>
 
 <span id='example-list-fs-ul'></span>
-<div list-wrapper>
+<div>
 	<button id='submit'>Submit (console.log)</button>
 	<button id='restore'>Restore to Default</button>
 	<button id='enable_disable'>Disable/Enable Form</button>
 	<span id='valid_indicator'></span>
 	
 	<div id='editor_holder'></div>
+</div>
+
+<div ng-repeat="item in table">
+	<h1>{{item.title}}</h1>
 </div>
