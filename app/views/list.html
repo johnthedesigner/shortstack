@@ -10,6 +10,16 @@
 	<div id='editor_holder'></div>
 </div>
 
-<div ng-repeat="item in table">
-	<h1>{{item.title}}</h1>
+<div ng-repeat="object in schema.objects">
+	<h3>{{object.title}}</h3>
+	<hr>
+	<div ng-repeat="item in db[object.title]">
+		{{item}}
+		<div ng-repeat="field in object.fields">
+			<input name="{{object.title}}-{{field.name}}" placeholder="{{field.name}}" value="{{item[field.name]}}">
+		</div>
+	</div>
+	<button ng-click="addObject(object.title)">Add {{object.title}}</button>
 </div>
+
+<button ng-click="saveDB()">Save</button>

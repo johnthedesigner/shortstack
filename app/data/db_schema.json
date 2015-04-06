@@ -1,0 +1,26 @@
+{"objects":{
+	"flower":{
+	    "type": "array",
+	    "title": "flower",
+        "fields": [
+            {
+                "name": "Name",
+                "type": "text"
+            },
+            {
+                "name": "Latin Name",
+                "type": "text"
+            }
+        ]
+	},
+	"gallery":{
+	    "type": "array",
+	    "title": "gallery",
+        "fields": [
+            {
+                "name": "name",
+                "type": "text"
+            }
+        ]
+	}
+}}
